@@ -7,9 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- PWA Manifest Link -->
-    <link rel="manifest" href="/manifest.json">
-
     <!-- Primary SEO Meta Tags -->
     <title>SHAWON TV PALASHBARI - Live TV Streaming, Sports, News & Bangla Channels</title>
     <meta name="title" content="SHAWON TV PALASHBARI - Live TV Streaming, Sports, News & Bangla Channels">
@@ -31,17 +28,6 @@
     <meta name="twitter:title" content="SHAWON TV - Live TV Streaming & Sports">
     <meta name="twitter:description" content="Watch live TV streaming, sports channels like T Sports, A Sports, Star Sports, and local news channels for free.">
     <meta name="twitter:image" content="https://i.postimg.cc/W1z5BGPZ/20240823_024712.png">
-
-    <!-- Service Worker Registration Script -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('Service Worker registered!'))
-            .catch(err => console.log('Service Worker registration failed: ', err));
-        });
-      }
-    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/PvnVqbdS/cpt-1469868507562.jpg">
@@ -325,6 +311,40 @@
     </div>
 
     <script>
+        // ==========================================
+        // ADVANCED HACK-PROOF SECURITY DEFENSE
+        // ==========================================
+
+        ['contextmenu', 'selectstart', 'copy', 'cut', 'dragstart'].forEach(eventType => {
+            document.addEventListener(eventType, e => e.preventDefault());
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) ||
+                (e.ctrlKey && ['U', 'u', 'S', 's', 'C', 'c', 'P', 'p'].includes(e.key))
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        function checkDevTools() {
+            const widthThreshold = window.outerWidth - window.innerWidth > 160;
+            const heightThreshold = window.outerHeight - window.innerHeight > 160;
+            
+            if (widthThreshold || heightThreshold) {
+                document.body.innerHTML = "<div style='background:black;height:100vh;display:flex;justify-content:center;align-items:center;'><h1 style='color:red;font-family:sans-serif;text-align:center;'>⛔ Security Alert: Developer Tools are blocked on this site!</h1></div>";
+                window.location.href = "about:blank";
+            }
+        }
+        setInterval(checkDevTools, 300);
+
+        // ==========================================
+        // PLAYER LOGIC
+        // ==========================================
         const videoEl = document.getElementById('my-video');
         const iframe = document.getElementById('custom-iframe');
         const clapprEl = document.getElementById('clappr-container');
@@ -353,7 +373,7 @@
                 ], 
                 logo: "https://static.wikia.nocookie.net/etv-gspn-bangla/images/6/6e/T_Sports_HD_logo_2021.png" 
             },
-            { name: "Willow sports TV ", url: "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV540p.m3u8", logo: "https://i.postimg.cc/HntSg3xw/20240823_024624.png" },
+            { name: "Willow sports TV", url: "https://warm-caverns-48629-92fab798385f.herokuapp.com/https://d36r8jifhgsk5j.cloudfront.net/Willow_TV540p.m3u8", logo: "https://i.postimg.cc/HntSg3xw/20240823_024624.png" },
             { name: "Willow tv", url: "https://tvsen5.aynascope.net/willowhd/index.m3u8", logo: "https://play-lh.googleusercontent.com/fmz6L0mlFDCRRudZ01RUk_DOLF6ITxEyRYysb2DRDp-mhle4cnsyi5QGF00tSNjPR_B2" },
             { name: "Ten cricket", url: "https://stream.ottplus.bd/live/ten_cricket_hd_abr/live/ten_cricket_hd_720/chunks.m3u8", logo: "https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/ra2x_pQBrjBfS2_RWG9l/posters/795170c2-ec78-457e-9fa0-54a23d23361c.webp", group: "Sports" },
             { name: "Sky sports", url: "https://1nyaler.streamhostingcdn.top/stream/10/index.m3u8", logo: "https://abusaeeidx.github.io/Tv-Channel-Logo/CricHD/runded/9-by-xfireflix.png" },
@@ -377,7 +397,7 @@
             { name: "Deepto TV", url: "https://byphdgllyk.gpcdn.net/hls/deeptotv/0_1/index.m3u8", logo: "https://imglink.cc/cdn/2ODX-FAGY4.png", group: "Bangladesh" },
             { name: "Maasranga TV", url: "https://mtv.sunplex.live/MAASRANGA/tracks-v1a1/mono.m3u8", logo: "https://tstatic.akash-go.com/cms-ui/images/custom-content/1773680325498.png", group: "Bangladesh" },
             { name: "Rtv", url: "https://tvsen5.aynaott.com/RtvHD/tracks-v1a1/mono.ts.m3u8", logo: "https://fcnchbd.xyz/iptv/logo/rtv.png", group: "Bangladesh" },
-            { name: "Ekushey TV", url: "https://tvsen6.aynaott.com/y4mEVZNAbeNWTbd6Z2Pw/tracks-v1a1/mono.ts.m3u8?e=1782665440", logo: "https://i.postimg.cc/rsDjtcFp/20240822_225424.png", group: "Bangladesh" },
+            { name: "Ekushey TV", url: "https://tvsen6.aynaott.com/y4mEVZNAbeNWTbd6Z2Pw/tracks-v1a1/mono.ts.m3u8?e=1782665440", logo: "https://i.postimg.cc/rsDjtcFp/20240822-225424.png", group: "Bangladesh" },
             { name: "Mohona TV", url: "https://stream.ottplus.live/live/mohona_tv_abr/index.m3u8", logo: "https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/-Xz3PJwBcqxnFHJBDAlE/posters/fecea361-8b60-4aeb-a530-6e27eee8178a.png", group: "Bangladesh" },
             { name: "Boishakhi TV", url: "https://playztv-apps.pages.dev/boishakhi-tv/index.m3u8", logo: "https://static.wikia.nocookie.net/etv-gspn-bangla/images/0/08/Boishakhi_TV_HD_logo_2022.png", group: "Bangladesh" },
             { name: "GAZI TV", url: "https://app.ncare.live/live-orgin/gazibdz.stream/live-orgin/gazibdz.stream/chunks.m3u8", logo: "https://fcnchbd.xyz/iptv/logo/gazi.png", group: "Bangladesh" },
@@ -389,8 +409,6 @@
             { name: "My TV", url: "https://tvsen6.aynaott.com/XMpHaEf0ANBhv8w6NWR7/tracks-v1a1/mono.ts.m3u8", logo: "https://i.postimg.cc/wB9kQDTZ/20240822-225812.png", group: "Bangladesh" },
             { name: "nagorik TV", url: "https://box.bbaria.net/Nagorik_TV/tracks-v1a1/mono.m3u8", logo: "https://fcnchbd.xyz/iptv/logo/nago.png", group: "Bangladesh" },
             { name: "SA TV", url: "https://tvsen6.aynaott.com/rELXiuUXqbgzPb06Npom/index.m3u8", logo: "https://sunplex.net/iptv/logo/satv.jpg", group: "Bangladesh" },
-            { name: "Rongeen TV", url: "https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8" },    
-            { name: "Drama 24", url: "https://vods2.aynaott.com/gseriesDrama/tracks-v1a1/mono.ts.m3u8", logo: "", group: "Bangladesh" },
             { name: "Rajdhani TV", url: "https://stream.shariarsuvo.com/hls5/rajdhanicable.m3u8", logo: "https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/KECGB54BuUSiBsg_dHyj/posters/58af9c58-ed80-458c-af13-cf381680cec6.png", group: "Bangladesh" },
             { name: "Movie Bangla", url: "https://stream.ottplus.live/live/movie_bangla_abr/index.m3u8", logo: "https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/CXz4PJwBcqxnFHJBPwrG/posters/2f913e34-3a6c-45e6-9f1f-97bf129a2ff5.png", group: "Movies" },
             { name: "Star Jalsha HD", url: "https://yupptvcatchupire.yuppcdn.net/preview/starjalsha/1800.m3u8", logo: "https://i.postimg.cc/0ykfppN3/20240822-231405.png", group: "Indian Bangla" },
@@ -418,7 +436,7 @@
             { name: "Shemaroo Bollywood", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8", logo: "https://i.ibb.co/KjjqnRH/Picsart-23-06-30-21-35-20-283.png", group: "Movies" },
             { name: "B4U Music", url: "https://amg00877-b4unew-amg00877c3-xiaomi-in-5474.playouts.now.amagi.tv/1080p/index.m3u8", logo: "https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/PS6F-JQBv9knK3AHqjVz/posters/0f83ee72-be0f-4861-94df-30b158d3df8d.webp" },
             { name: "Music india", url: "https://jioplaylistdown.yecic62314.workers.dev/live.m3u8?id=250", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKyMNNb_SRC2dnm7IW84llAJ9aO5Zb7V4jdjHaweOo58tzrc9pSsRv85-TZD1w4L57nc4&usqp=CAU", group: "Music" },
-            { name: "Movie channel", url: "https://a-cdn.klowdtv.com/live1/smc_720p/chunks.m3u8", logo: "", group: "Movies" },
+            { name: "Movei chnnel", url: "https://a-cdn.klowdtv.com/live1/smc_720p/chunks.m3u8", logo: "", group: "Movies" },
             { name: "Action Hollywood", url: "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-actionhollywood-samsungnz/playlist.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw1zW8RLLNCQm6UHcIIJZlscOB5vhs7BF2I7SfTthYGv3LtHeRSut2-Ag&s=10", group: "Movies" },
             { name: "Movies HLS", url: "https://moviethls.wns.live/hls/stream.m3u8", logo: "", group: "Movies" },
             { name: "9XM", url: "https://jioplaylistdown.yecic62314.workers.dev/live.m3u8?id=587", logo: "https://i.postimg.cc/SRKS6TwR/20240823_022008.png", group: "Music" },
@@ -430,7 +448,6 @@
             { name: "Tom & Jerry TV", url: "https://live20.bozztv.com/giatvplayout7/giatv-208314/tracks-v1a1/mono.ts.m3u8", logo: "", group: "Cartoon" },
             { name: "Doraemon TV", url: "https://live20.bozztv.com/giatvplayout7/giatv-209902/tracks-v1a1/mono.ts.m3u8", logo: "", group: "Cartoon" },
             { name: "CGTN Docu", url: "https://english-livebkali.cgtn.com/live/doccgtn_1.m3u8", logo: "", group: "Documentary" },
-            { name: "Animal Planet", url: "https://stream.ottplus.bd/live/animal_planet_hd_abr/live/animal_planet_hd/chunks.m3u8", logo: "", group: "Documentary" },
             { name: "Discovery", url: "https://jioplaylistdown.yecic62314.workers.dev/live.m3u8?id=573", logo: "https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/KS6x-JQBv9knK3AHwDZy/posters/6594d216-aaca-4eee-b6f5-bbc6b80feb15.webp", group: "Documentary" },
             { name: "Discover Pakistan", url: "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI2/discoverpakistan.stream/playlist.m3u8", logo: "", group: "Documentary" }
         ];
@@ -450,8 +467,10 @@
 
             urls.forEach((link, index) => {
                 const sBtn = document.createElement('button');
-                sBtn.className = 'server-btn' + (index === 0 ? ' active' : '');
-                sBtn.innerText = 'সার্ভার ' + (index + 1);
+                sBtn.className = 'server-btn';
+                sBtn.innerText = `Server ${index + 1}`;
+                if (index === 0) sBtn.classList.add('active');
+
                 sBtn.onclick = () => {
                     document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
                     sBtn.classList.add('active');
@@ -460,9 +479,7 @@
                 buttonsContainer.appendChild(sBtn);
             });
 
-            if (urls.length > 0) {
-                loadChannelUrl(urls[0], currentMode);
-            }
+            loadChannelUrl(urls[0], currentMode);
         }
 
         function loadChannelUrl(url, mode) {
@@ -470,31 +487,27 @@
             currentMode = mode;
 
             videoEl.style.display = 'none';
+            iframe.style.display = 'none';
             clapprEl.style.display = 'none';
             html5El.style.display = 'none';
-            iframe.style.display = 'none';
-
-            if (hls) {
-                hls.destroy();
-                hls = null;
-            }
-
-            if (clapprInstance) {
-                clapprInstance.destroy();
-                clapprInstance = null;
-            }
+            
+            if (hls) { hls.destroy(); hls = null; }
+            if (clapprInstance) { clapprInstance.destroy(); clapprInstance = null; }
+            videoEl.pause();
+            videoEl.src = "";
+            videoEl.load();
 
             if (mode === 'videojs') {
                 videoEl.style.display = 'block';
                 if (videoEl.player) {
                     videoEl.player.src({ src: url, type: 'application/x-mpegURL' });
-                    videoEl.player.play();
+                    videoEl.player.play().catch(e => console.log("Play error"));
                 } else {
                     const player = videojs(videoEl, {
                         fluid: true,
                         sources: [{ src: url, type: 'application/x-mpegURL' }]
                     });
-                    player.play();
+                    player.play().catch(e => console.log("Play error"));
                 }
             } else if (mode === 'clappr') {
                 clapprEl.style.display = 'block';
@@ -511,7 +524,9 @@
                     hls = new Hls();
                     hls.loadSource(url);
                     hls.attachMedia(html5El);
-                    hls.on(Hls.Events.MANIFEST_PARSED, () => html5El.play());
+                    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                        html5El.play().catch(e => console.log("Play error"));
+                    });
                 } else if (html5El.canPlayType('application/vnd.apple.mpegurl')) {
                     html5El.src = url;
                     html5El.addEventListener('loadedmetadata', () => html5El.play());
@@ -525,22 +540,26 @@
         function playCustom() {
             const customUrl = document.getElementById('customUrlInput').value.trim();
             if (customUrl) {
+                document.getElementById('activeChannelName').innerText = "Custom Stream";
+                document.getElementById('serverButtonsContainer').innerHTML = '';
                 loadChannelUrl(customUrl, currentMode);
             }
         }
 
-        const channelContainer = document.getElementById('channelContainer');
+        // রেন্ডার চ্যানেল লিস্ট
+        const container = document.getElementById('channelContainer');
         channels.forEach(ch => {
-            const chBtn = document.createElement('div');
-            chBtn.className = 'ch-btn';
-            chBtn.innerHTML = `
+            const btn = document.createElement('div');
+            btn.className = 'ch-btn';
+            btn.innerHTML = `
                 <img src="${ch.logo || 'https://i.ibb.co.com/PvnVqbdS/cpt-1469868507562.jpg'}" alt="${ch.name}">
                 <strong>${ch.name}</strong>
             `;
-            chBtn.onclick = () => loadChannel(ch);
-            channelContainer.appendChild(chBtn);
+            btn.onclick = () => loadChannel(ch);
+            container.appendChild(btn);
         });
 
+        // প্রথম চ্যানেলটি ডিফল্টভাবে লোড করার জন্য
         if (channels.length > 0) {
             loadChannel(channels[0]);
         }
